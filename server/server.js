@@ -21,7 +21,9 @@ const port = process.env.PORT || 4000;
 // allow multiple origins
 const allowedOrigins = ['http://localhost:5173'];
 
-app.post('/stripe',express.raw({type: 'application/json'}), stripeWebhook)
+
+// Stripe webhook route FIRST, before express.json()
+app.get('/stripe', express.raw({type: 'application/json'}), stripeWebhook);
 
 
 // Connect to DB before starting server
