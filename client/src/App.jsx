@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import { Route, Routes, useLocation, Navigate } from 'react-router-dom'
 import Home from './pages/home'
 import { Toaster } from 'react-hot-toast'; 
