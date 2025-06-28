@@ -10,12 +10,16 @@ import productRouter from './routes/productRoute.js';
 import cartRouter from './routes/cartRoute.js';
 import addressRouter from './routes/addressRoute.js';
 import orderRouter from './routes/orderRoute.js';
-import { stripeWebhook } from './controllers/orderController.js';
+import { stripeWebhooks } from './controllers/orderController.js';
 
 
 
 const app = express();
 const port = process.env.PORT || 4000;
+
+// Connect to DB before starting server
+await connectDB();
+await connectCloudinary();
 
 
 // allow multiple origins
@@ -23,18 +27,19 @@ const allowedOrigins = ['http://localhost:5173'];
 
 
 // Stripe webhook route FIRST, before express.json()
-app.get('/stripe', express.raw({type: 'application/json'}), stripeWebhook);
+app.post('/stripe', express.raw({type: 'application/json'}), stripeWebhooks);
 
-
-// Connect to DB before starting server
-await connectDB();
-await connectCloudinary();
 
 
 // Middleware configuration 
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({ origin: allowedOrigins, credentials: true }));
+
+
+
+
+
 
 
  
