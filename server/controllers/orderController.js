@@ -8,7 +8,8 @@ import stripe from "stripe";
 
 export const placeOrderStripe = async (req,res) =>{
     try {
-        const {userId,items, address} = req.body;
+        const {items, address} = req.body;
+        const userId = req.userId;
         
         const {origin} = req.headers;
 
@@ -155,7 +156,8 @@ export const stripeWebhooks = async (request, response) => {
 
 export const placeOrderCOD = async (req,res) =>{
     try {
-        const {userId,items, address} = req.body
+        const {items, address} = req.body;
+        const userId = req.userId;
 
 
         if(!address || items.length === 0){
