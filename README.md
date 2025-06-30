@@ -21,7 +21,6 @@ A full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application for s
 ## Demo
 
 **Live Site:** [https://greencart.live](https://greencart.live)  
-**GitHub Repo:** [https://github.com/yourusername/greencart](https://github.com/yourusername/greencart)
 
 ## Getting Started
 
