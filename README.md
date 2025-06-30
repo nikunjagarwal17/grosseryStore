@@ -25,7 +25,7 @@ A full-stack MERN (MongoDB, Express.js, React.js, Node.js) web application for s
 ## Getting Started
 
 1. Clone the repo  
-   `git clone https://github.com/yourusername/greencart.git`
+   `git clone https://github.com/nikunjagarwal17/greencart.git`
 
 2. Install dependencies  
    `cd server && npm install`  
